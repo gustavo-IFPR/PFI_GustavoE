@@ -45,62 +45,30 @@
     <!-- A lista de resultados aparecerá aqui -->
 </div>
 
-<script>
-    function searchBusiness() {
-        // Este é um exemplo simples. Você deve implementar a lógica de pesquisa e atualizar a div #results com os resultados.
+<div id="results">
+    <div class="business-item">
+        <img src="caminho-para-imagem1.jpg" alt="Nome do Negócio Social 1">
+        <h3>Nome do Negócio Social 1</h3>
+        <p>Cidade: Nome da Cidade 1</p>
+        <p>Ramo de Atuação: Saúde</p>
+    </div>
+    
+    <div class="business-item">
+        <img src="caminho-para-imagem2.jpg" alt="Nome do Negócio Social 2">
+        <h3>Nome do Negócio Social 2</h3>
+        <p>Cidade: Nome da Cidade 2</p>
+        <p>Ramo de Atuação: Educação</p>
+    </div>
+    
+    <div class="business-item">
+        <img src="caminho-para-imagem3.jpg" alt="Nome do Negócio Social 3">
+        <h3>Nome do Negócio Social 3</h3>
+        <p>Cidade: Nome da Cidade 3</p>
+        <p>Ramo de Atuação: Meio Ambiente</p>
+    </div>
 
-        const query = document.getElementById("searchQuery").value.toLowerCase();
-        const ramo = document.getElementById("selectRamo").value;
-        const cidade = document.getElementById("selectCidade").value;
-
-        // Exemplo de lista de negócios sociais
-        const businesses = [
-            {
-                name: "Negócio Social 1",
-                ramo: "saude",
-                cidade: "curitiba",
-                img: "../img/negocio1.jpg"
-            },
-            {
-                name: "Negócio Social 2",
-                ramo: "educacao",
-                cidade: "londrina",
-                img: "../img/negocio2.jpg"
-            },
-            {
-                name: "Negócio Social 3",
-                ramo: "meio-ambiente",
-                cidade: "maringa",
-                img: "../img/negocio3.jpg"
-            },
-        ];
-
-        const results = businesses.filter(business => {
-            return (business.name.toLowerCase().includes(query) ||
-                    business.ramo === ramo || 
-                    business.cidade === cidade);
-        });
-
-        const resultsDiv = document.getElementById("results");
-        resultsDiv.innerHTML = "";
-
-        results.forEach(business => {
-            const businessElement = document.createElement("div");
-            businessElement.innerHTML = `
-                <img src="${business.img}" alt="${business.name}" width="100">
-                <h3>${business.name}</h3>
-                <p>Ramo: ${business.ramo}</p>
-                <p>Cidade: ${business.cidade}</p>
-            `;
-            resultsDiv.appendChild(businessElement);
-        });
-
-        if (results.length === 0) {
-            resultsDiv.innerHTML = "<p>Nenhum negócio social encontrado.</p>";
-        }
-    }
-</script>
-
+    <!-- Adicione mais negócios sociais conforme necessário -->
+</div>
     
 </body>
 </html>
