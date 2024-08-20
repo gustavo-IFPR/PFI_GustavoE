@@ -35,6 +35,30 @@
         <h2>Dimensão e Mensuração</h2>
         <p>Avaliamos constantemente a dimensão e mensuração do impacto gerado pelas empresas sociais em parceria com as comunidades. Utilizamos métricas significativas para entender e comunicar o progresso, contribuindo para a transparência e prestação de contas.</p>
 
+        <h2>Pesquisa de Negócios Sociais</h2>
+        <form id="searchForm">
+            <input type="text" id="searchQuery" placeholder="Pesquisar negócios sociais">
+            <select id="selectRamo">
+                <option value="">Selecionar ramo</option>
+                <option value="saude">Saúde</option>
+                <option value="educacao">Educação</option>
+                <option value="meio-ambiente">Meio Ambiente</option>
+                <!-- Adicione mais opções conforme necessário -->
+            </select>
+            <select id="selectCidade">
+                <option value="">Selecionar cidade</option>
+                <option value="curitiba">Curitiba</option>
+                <option value="londrina">Londrina</option>
+                <option value="maringa">Maringá</option>
+                <!-- Adicione mais opções conforme necessário -->
+            </select>
+            <button type="button" onclick="searchBusiness()">Pesquisar</button>
+        </form>
+
+        <div id="results">
+            <!-- A lista de resultados aparecerá aqui -->
+        </div>
+
         <img src="../" alt="Imagem Ilustrativa">
 
         <p>Estamos comprometidos em promover a sustentabilidade, a justiça social e o desenvolvimento econômico por meio da conexão estratégica entre empresas sociais e comunidades.</p>
@@ -43,6 +67,62 @@
     <footer>
         <p>&copy; 2024 Redes de Impacto. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        function searchBusiness() {
+            // Este é um exemplo simples. Você deve implementar a lógica de pesquisa e atualizar a div #results com os resultados.
+
+            const query = document.getElementById("searchQuery").value.toLowerCase();
+            const ramo = document.getElementById("selectRamo").value;
+            const cidade = document.getElementById("selectCidade").value;
+
+            // Exemplo de lista de negócios sociais
+            const businesses = [
+                {
+                    name: "Negócio Social 1",
+                    ramo: "saude",
+                    cidade: "curitiba",
+                    img: "../img/negocio1.jpg"
+                },
+                {
+                    name: "Negócio Social 2",
+                    ramo: "educacao",
+                    cidade: "londrina",
+                    img: "../img/negocio2.jpg"
+                },
+                {
+                    name: "Negócio Social 3",
+                    ramo: "meio-ambiente",
+                    cidade: "maringa",
+                    img: "../img/negocio3.jpg"
+                },
+            ];
+
+            const results = businesses.filter(business => {
+                return (business.name.toLowerCase().includes(query) ||
+                        business.ramo === ramo || 
+                        business.cidade === cidade);
+            });
+
+            const resultsDiv = document.getElementById("results");
+            resultsDiv.innerHTML = "";
+
+            results.forEach(business => {
+                const businessElement = document.createElement("div");
+                businessElement.innerHTML = `
+                    <img src="${business.img}" alt="${business.name}" width="100">
+                    <h3>${business.name}</h3>
+                    <p>Ramo: ${business.ramo}</p>
+                    <p>Cidade: ${business.cidade}</p>
+                `;
+                resultsDiv.appendChild(businessElement);
+            });
+
+            if (results.length === 0) {
+                resultsDiv.innerHTML = "<p>Nenhum negócio social encontrado.</p>";
+            }
+        }
+    </script>
 
 </body>
 </html>
