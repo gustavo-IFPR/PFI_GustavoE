@@ -22,53 +22,54 @@
         <button onclick="window.location.href='./PFI/html/login.html'">Login</button>
     </nav>
 
-    <form id="searchForm">
-    <input type="text" id="searchQuery" placeholder="Pesquisar negócios sociais">
-    <select id="selectRamo">
-        <option value="">Selecionar ramo</option>
-        <option value="saude">Saúde</option>
-        <option value="educacao">Educação</option>
-        <option value="meio-ambiente">Meio Ambiente</option>
-     
-    </select>
-    <select id="selectCidade">
-        <option value="">Selecionar cidade</option>
-        <option value="curitiba">Curitiba</option>
-        <option value="londrina">Londrina</option>
-        <option value="maringa">Maringá</option>
+    <main>
+        <form id="searchForm">
+            <input type="text" id="searchQuery" placeholder="Pesquisar negócios sociais">
+            <select id="selectRamo">
+                <option value="">Selecionar ramo</option>
+                <option value="saude">Saúde</option>
+                <option value="educacao">Educação</option>
+                <option value="meio-ambiente">Meio Ambiente</option>
+                <!-- Adicione mais opções conforme necessário -->
+            </select>
+            <select id="selectCidade">
+                <option value="">Selecionar cidade</option>
+                <option value="curitiba">Curitiba</option>
+                <option value="londrina">Londrina</option>
+                <option value="maringa">Maringá</option>
+                <!-- Adicione mais opções conforme necessário -->
+            </select>
+            <button type="button" onclick="searchBusiness()">Pesquisar</button>
+        </form>
 
-    </select>
-    <button type="button" onclick="searchBusiness()">Pesquisar</button>
-    </form>
-
-    <div id="results">
-  
-</div>
-
-<div id="results">
-    <div class="business-item">
-        <img src="caminho-para-imagem1.jpg" alt="Boomera">
-        <h3>Boomera</h3>
-        <p>Cidade: Curitiba</p>
-        <p>Ramo de Atuação: Tecnologia</p>
-    </div>
+        <section id="results">
+            <div class="business-item">
+                <img src="caminho-para-imagem1.jpg" alt="Boomera">
+                <h3>Boomera</h3>
+                <p>Cidade: Curitiba</p>
+                <p>Ramo de Atuação: Tecnologia</p>
+            </div>
+            
+            <div class="business-item">
+                <img src="caminho-para-imagem2.jpg" alt="Editora Mol">
+                <h3>Editora Mol</h3>
+                <p>Cidade: Londrina</p>
+                <p>Ramo de Atuação: Educação</p>
+            </div>
+            
+            <div class="business-item">
+                <img src="caminho-para-imagem3.jpg" alt="Feira Preta">
+                <h3>Feira Preta</h3>
+                <p>Cidade: Maringá</p>
+                <p>Ramo de Atuação: Comercial</p>
+            </div>
+            <!-- Adicione mais negócios sociais conforme necessário -->
+        </section>
+    </main>
     
-    <div class="business-item">
-        <img src="caminho-para-imagem2.jpg" alt="Editora Mol">
-        <h3>Editora Mol</h3>
-        <p>Cidade: Londrina</p>
-        <p>Ramo de Atuação: Educação</p>
-    </div>
-    
-    <div class="business-item">
-        <img src="caminho-para-imagem3.jpg" alt="Feira Preta">
-        <h3>Feira Preta</h3>
-        <p>Cidade: Maringá</p>
-        <p>Ramo de Atuação: Comercial</p>
-    </div>
+    <footer>
+        <p>&copy; 2024 Negócios Sociais. Todos os direitos reservados.</p>
+    </footer>
 
-
-</div>
-    
 </body>
 </html>
